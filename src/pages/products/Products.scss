@@ -1,0 +1,18 @@
+body, p, div, ul, ol, li, span, strong, h1, h2,h3, img{
+    margin:0;
+    padding:0;
+}
+
+.products-page {
+    .container {
+        // border: 1px solid black;
+        width: 90%;
+        margin: 1rem auto 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        min-height: 70vh;
+    }
+}
