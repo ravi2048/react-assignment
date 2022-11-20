@@ -5,12 +5,22 @@ export const cartSlice = createSlice({
   initialState: [],
   reducers: {
     addItem: (state, action) => {
-        state.push(action.payload);
+        // dont add if already exists
+        let flag = false;
+        if(state.length) {
+          state.map(item => {
+            if(item.id === action.payload.id) {
+              flag = true;
+            }
+          })
+        }
+
+        if(!flag) {
+          state.push(action.payload);
+        }
     },
     removeItem: (state, action) => {
         return state.filter(item => item.id !== action.payload.id);
-        // state = prdcts;
-        // console.log(`!!!!!!!! ${JSON.stringify(prdcts)}`);
     }
   }
 })
